@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="leftHeader">
-        <img class="logo" src="./imgs/logoFluxo.png" alt="" />
+        <img class="logo" src="./imgs/logoFluxo.png" draggable="false" alt="" />
         <h2 id="title">FluxoSocial</h2>
       </div>
       <div class="rightHeader">
@@ -19,18 +19,30 @@
     <div class="wrapper">
       <div class="mainLeft">
         <h1>Faça seu login!</h1>
-        <img class="capa" src="imgs/Pré-Capa.png" alt="" />
+        <img class="capa" src="imgs/Pré-Capa.png" draggable="false" alt="" />
       </div>
       <div class="mainRight">
         <form>
           <div class="form-wrapper">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Digite seu Email"
+            />
           </div>
           <div class="form-wrapper">
             <label for="password" placeholder="Digite sua senha">Senha</label>
             <a href="#" class="esq-senha">Esqueceu sua senha?</a>
-            <input type="password" id="password" name="password" required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Digite sua senha"
+            />
           </div>
           <div class="form-wrapper">
             <label class="toggle">
@@ -38,7 +50,7 @@
                 <input type="checkbox" />
                 <span class="slider"></span>
               </div>
-              <p id="remember">Lembrar-se de mim</p>
+              <a id="remember" href="#">Lembrar-se de mim</a>
             </label>
           </div>
           <button type="submit" class="btn-login">Entrar</button>

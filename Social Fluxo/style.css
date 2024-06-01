@@ -3,12 +3,13 @@ body {
   padding: 0;
   font-family: "helvetica neue", sans-serif;
   color: #fff;
+  overflow: hidden;
 }
 
 header {
   background-color: #000;
   color: #fff;
-  padding: 0 10%;
+  padding: 0 15%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,14 +35,15 @@ header {
 }
 
 .wrapper {
-  padding: 5% 10%;
+  padding: calc(5% + 3px) 5%;
   display: flex;
   flex-direction: row;
   height: max-content;
   background-image: url("./imgs/Foto_Fluxo.png");
-  background-color: #4c4c4c;
+  background-color: #727272;
   background-blend-mode: multiply;
   background-size: cover;
+  justify-content: space-between;
 }
 
 .mainLeft {
@@ -49,8 +51,7 @@ header {
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -62,16 +63,6 @@ header {
   align-items: center;
 }
 
-ul {
-  list-style-type: disc;
-  display: flex;
-  flex-direction: row;
-}
-
-li {
-  margin: 0 1em;
-}
-
 h2 {
   font-weight: 500;
   color: #f68332;
@@ -80,6 +71,7 @@ h2 {
 h1 {
   font-size: 2.5em;
   font-weight: 600;
+  margin: 0 0;
 }
 
 .logo {
@@ -91,6 +83,10 @@ h1 {
   margin-top: 10%;
 }
 
+form {
+  width: 50%;
+}
+
 .form-wrapper {
   margin-bottom: 15px;
   position: relative;
@@ -98,18 +94,24 @@ h1 {
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: calc(100% - 20px);
-  padding: 10px;
+  padding: 1.5em 0 1.5em 3em;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
+  width: calc(100% - 3em - 2px); /* 3em padding + 2px border */
 }
 
+input[type="email"]::placeholder {
+  margin-left: 0px;
+}
+#email {
+  margin-bottom: 15px;
+}
 .esq-senha {
   color: #f68332;
   font-size: 0.8em;
@@ -141,36 +143,43 @@ button {
   font-size: larger;
   padding: 15px;
   color: white;
+  margin-top: 15%;
 }
 
 .btn-google {
+  display: flex;
+  flex-direction: row;
   background-color: #fff;
   margin-right: 10px;
   align-items: center;
-  font-size: small;
+  padding: 2% 0;
+  font-size: 11px;
   color: black;
 }
 
 .btn-apple {
+  display: flex;
+  flex-direction: row;
   background-color: #fff;
-  font-size: small;
+  align-items: center;
+  padding: 2% 0;
+  font-size: 11px;
   color: black;
 }
 
 .other-login {
   display: flex;
   flex-direction: row;
-
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .icon {
-  width: 25px;
+  width: 20px;
+  margin-right: 10px;
 }
 
-/* The switch - the box around the slider */
 .switch {
-  font-size: 17px;
+  font-size: 13px;
   position: relative;
   width: 3.5em;
   height: 2em;
@@ -184,27 +193,26 @@ button {
 
 #remember {
   color: #f68332;
-  font-size: 0.8em;
+  font-size: 13px;
   font-weight: bold;
   text-decoration: none;
   margin-left: 20px;
+  align-self: center;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
   inset: 0;
   border: 1px solid #414141;
   border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s;
 }
 
 .slider:before {
@@ -212,8 +220,8 @@ button {
   content: "";
   height: 1.5em;
   width: 1.5em;
-  left: 0.15em;
-  bottom: 0.15em;
+  left: 0.2em;
+  bottom: 0.2em;
   background-color: white;
   border-radius: inherit;
   transition: all 0.4s;
@@ -228,6 +236,7 @@ button {
 }
 
 footer {
+  position: sticky;
   background-color: #000;
   color: #fff;
   padding: 2em 0;
@@ -235,6 +244,15 @@ footer {
   flex-direction: row;
   justify-content: center;
   font-size: small;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  margin: 0 1em;
 }
 
 a {

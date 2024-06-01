@@ -1,9 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Social Fluxo</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="leftHeader">
+        <img class="logo" src="./imgs/logoFluxo.png" alt="" />
+        <h2 id="title">FluxoSocial</h2>
+      </div>
+      <div class="rightHeader">
+        <h2 id="slogan">It's happening now!</h2>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="mainLeft">
+        <h1>Faça seu login!</h1>
+        <img class="capa" src="imgs/Pré-Capa.png" alt="" />
+      </div>
+      <div class="mainRight">
+        <form>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Entrar</button>
+          <button>Google</button>
+          <button>Apple</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <ul>
+        <li id="first"><a href="#">Sobre</a></li>
+        <li><a href="#">Central de Ajuda</a></li>
+        <li><a href="#">Termos de Serviço</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+        <li><a href="#">Acessibilidade</a></li>
+        <li><a href="#">Política de cookies</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>

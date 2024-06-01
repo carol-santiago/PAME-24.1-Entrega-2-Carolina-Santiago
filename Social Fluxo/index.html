@@ -23,13 +23,35 @@
       </div>
       <div class="mainRight">
         <form>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label for="password">Senha:</label>
-          <input type="password" id="password" name="password" required />
-          <button type="submit">Entrar</button>
-          <button>Google</button>
-          <button>Apple</button>
+          <div class="form-wrapper">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-wrapper">
+            <label for="password" placeholder="Digite sua senha">Senha</label>
+            <a href="#" class="esq-senha">Esqueceu sua senha?</a>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-wrapper">
+            <label class="toggle">
+              <div class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </div>
+              <p id="remember">Lembrar-se de mim</p>
+            </label>
+          </div>
+          <button type="submit" class="btn-login">Entrar</button>
+          <div class="other-login">
+            <button type="button" class="btn-google">
+              <img class="icon" src="imgs/logoGoogle.png" alt="" />
+              Entrar com Google
+            </button>
+            <button type="button" class="btn-apple">
+              <img class="icon" src="imgs/logoApple.png" alt="" />
+              Entrar com Apple
+            </button>
+          </div>
         </form>
       </div>
     </div>

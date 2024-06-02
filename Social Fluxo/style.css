@@ -1,12 +1,21 @@
+/* estilos gerais da página */
+html {
+  height: 100%;
+  background-color: #ffffff;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "helvetica neue", sans-serif;
-  color: #fff;
-  overflow: hidden;
+  color: #ffffff;
+  /* overflow: hidden; */
 }
 
+/* estilos que definem o layout da página */
+
 header {
+  /*propriedades gerais da header*/
   background-color: #000;
   color: #fff;
   padding: 0 15%;
@@ -17,60 +26,70 @@ header {
 }
 
 .leftHeader {
+  /*propriedades do lado esquerdo da header*/
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
 }
 
-#title {
-  font-size: 2em;
-  font-weight: 500;
-  margin-left: 1em;
-  color: #fff;
-}
-
 .rightHeader {
+  /*propriedades do lado direito da header*/
   justify-content: right;
 }
 
 .wrapper {
-  padding: calc(5% + 3px) 5%;
+  /*propriedades gerais da página com o conteúdo em si*/
+  padding: 5%;
   display: flex;
   flex-direction: row;
   height: max-content;
-  background-image: url("./imgs/Foto_Fluxo.png");
-  background-color: #727272;
-  background-blend-mode: multiply;
+  background-image: url("./imgs/Foto_Fluxo.png"); /*imagem de fundo*/
+  background-color: #727272; /*cor de fundo usada para escurecer a imagem*/
+  background-blend-mode: multiply; /*propriedade para escurecer a imagem*/
   background-size: cover;
-  justify-content: space-between;
 }
 
 .mainLeft {
-  width: 50%;
+  /*div que contém a capa e o texto h1*/
+  width: 55%;
   color: #fff;
   display: flex;
   flex-direction: column;
+  /*alinha o conteúdo no top-center da div*/
   justify-content: start;
   align-items: center;
 }
 
 .mainRight {
-  width: 50%;
+  /*metade direita da página*/
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-h2 {
+/*estilos dos textos principais e imagens*/
+
+#title {
+  /*estilos do título FluxoSocial*/
+  font-size: 2em;
+  font-weight: 500;
+  margin-left: 1em;
+  color: #fff;
+}
+
+#slogan {
+  /*estilos do slogan*/
   font-weight: 500;
   color: #f68332;
 }
 
 h1 {
+  /*estilos do texto 'Faça seu login'*/
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0;
 }
 
@@ -81,13 +100,17 @@ h1 {
 .capa {
   width: 60%;
   margin-top: 10%;
+  margin-bottom: 20%; /*margem inferior para ajustar a pagina ao tamanho da tela*/
 }
 
+/*estilos do formulário de login*/
+
 form {
-  width: 50%;
+  width: 60%;
 }
 
 .form-wrapper {
+  /*div que contém elementos individuais do form*/
   margin-bottom: 15px;
   position: relative;
 }
@@ -100,19 +123,23 @@ label {
 
 input[type="email"],
 input[type="password"] {
+  /*estilo das caixas de texto de email e senha*/
   padding: 1.5em 0 1.5em 3em;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: calc(100% - 3em - 2px); /* 3em padding + 2px border */
+  width: calc(100% - 3em - 2px);
+  /* subtrai 3em de padding e 2px de border 
+  (1.5*2 e 1*2 para esquerda e direita) para manter a 
+  mesma width por todo o formulário*/
 }
 
-input[type="email"]::placeholder {
-  margin-left: 0px;
-}
 #email {
+  /*define espaçamento entre caixas de email e senha*/
   margin-bottom: 15px;
 }
+
 .esq-senha {
+  /*estilo do link de esqueceu sua senha*/
   color: #f68332;
   font-size: 0.8em;
   font-weight: bold;
@@ -126,7 +153,77 @@ input[type="email"]::placeholder {
   text-decoration: underline;
 }
 
+/*estilos do botão de toggle*/
+
+.toggle {
+  /* 'container' do botão de toggle e texto lembrar-se de mim */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.btn-toggle {
+  /* div que contém o botão do toggle */
+  font-size: 13px;
+  position: relative;
+  width: 3.5em;
+  height: 2em;
+}
+
+.btn-toggle input {
+  /* input do tipo checkbox - caixinha */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  /* botão do toggle - propriedades fixas*/
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 1px solid #414141;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.slider:before {
+  /* botão do toggle desmarcado */
+  position: absolute;
+  content: "";
+  height: 1.5em;
+  width: 1.5em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s;
+}
+
+.btn-toggle input:checked + .slider {
+  /* cor do botão do toggle quando marcado */
+  background-color: #f68332;
+}
+
+.btn-toggle input:checked + .slider:before {
+  /* define a posição da bolinha do toggle quando marcado */
+  transform: translateX(1.5em);
+}
+
+#remember {
+  /* texto lembrar-se de mim */
+  color: #f68332;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+  align-self: center;
+}
+
+/*estilos do botão de login*/
+
 button {
+  /* propriedades gerais dos botões de login */
   width: 100%;
   padding: 10px;
   border: none;
@@ -139,6 +236,7 @@ button {
 }
 
 .btn-login {
+  /*botão de entrar*/
   background-color: #f68332;
   font-size: larger;
   padding: 15px;
@@ -146,7 +244,15 @@ button {
   margin-top: 15%;
 }
 
+.other-login {
+  /*div que contém os botões de login com google e apple*/
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
 .btn-google {
+  /*botão de login com google*/
   display: flex;
   flex-direction: row;
   background-color: #fff;
@@ -158,6 +264,7 @@ button {
 }
 
 .btn-apple {
+  /*botão de login com apple*/
   display: flex;
   flex-direction: row;
   background-color: #fff;
@@ -167,79 +274,23 @@ button {
   color: black;
 }
 
-.other-login {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
-
 .icon {
+  /*ícone do google e apple*/
   width: 20px;
   margin-right: 10px;
 }
 
-.switch {
-  font-size: 13px;
-  position: relative;
-  width: 3.5em;
-  height: 2em;
-}
-
-.toggle {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-#remember {
-  color: #f68332;
-  font-size: 13px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-left: 20px;
-  align-self: center;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  border: 1px solid #414141;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.5em;
-  width: 1.5em;
-  left: 0.2em;
-  bottom: 0.2em;
-  background-color: white;
-  border-radius: inherit;
-  transition: all 0.4s;
-}
-
-.switch input:checked + .slider {
-  background-color: #f68332;
-}
-
-.switch input:checked + .slider:before {
-  transform: translateX(1.5em);
-}
+/*estilos do footer*/
 
 footer {
-  position: sticky;
-  background-color: #000;
+  /*propriedades gerais do footer*/
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  background-color: #000000;
   color: #fff;
-  padding: 2em 0;
+  padding: 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -247,20 +298,25 @@ footer {
 }
 
 ul {
+  /*lista de links do footer*/
   display: flex;
   flex-direction: row;
+  height: min-content;
 }
 
 li {
+  /* define espaçamento entre os links do footer */
   margin: 0 1em;
 }
 
 a {
+  /*estilo dos links do footer*/
   color: #fff;
   text-decoration: none;
   margin: 0 30px;
 }
 
 #first {
+  /*tira a bolinha do primeiro link do footer*/
   list-style: none;
 }

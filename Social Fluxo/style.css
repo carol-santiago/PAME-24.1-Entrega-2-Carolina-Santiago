@@ -323,3 +323,37 @@ a {
   /*tira a bolinha do primeiro link do footer*/
   list-style: none;
 }
+
+@media (max-width: 760px) {
+  header {
+    justify-content: flex-start;
+    padding: 0 2%;
+  }
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+  #title {
+    margin: 0 0;
+  }
+  .capa {
+    width: 30%;
+    margin: 5% 0;
+  }
+  .rightHeader {
+    margin-left: 3%;
+  }
+  .mainLeft {
+    width: fit-content;
+  }
+  .wrapper {
+    /* height: auto; */
+    padding: 3%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  form {
+    width: 60vw;
+  }
+}
